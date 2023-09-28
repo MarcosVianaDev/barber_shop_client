@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const data_aba = url_params.get('aba')
   const form = document.getElementsByTagName('form')
   var data_cadastro;
+  var temp_date;
 
   //Verifica se tem id e aba do item para pesquisar no DB
   if (item_id && data_aba) {
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form[0].onsubmit = (evt => {
     evt.preventDefault()
-    data_send = {}
+    let data_send = {}
     data_send['data_cadastro'] = data_cadastro
     for (let index = 0; index < evt.target.length; index++) {
       const element = evt.target[index];
