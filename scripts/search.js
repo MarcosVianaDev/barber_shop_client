@@ -1,3 +1,5 @@
+import './config'
+
 document.addEventListener('DOMContentLoaded', () => {
     const aba = document.getElementById('aba');
     aba.addEventListener('change', (evt) => {
@@ -26,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return
         }
 
-        fetch(`http://localhost:8080/${aba.value}/${id_input}`)
+        fetch(`${URL_IN_USE}/${aba.value}/${id_input}`)
             .then(res => res.json())
             .then((res) => {
                 if (res == `Id ${id_input} not found` || res.detail == "Not Found") {
@@ -86,8 +88,8 @@ function cancelar() {
 
 function salvar() {
     console.log('Salvando');
-    // fetch(`http://localhost:8080/${aba.value}/${id_input}/edit`, {
-    fetch(`http://localhost:8080/barbeiros/1/edit`, {
+    fetch(`${URL_IN_USE}/${aba.value}/${id_input}/edit`, {
+    // fetch(`http://localhost:8080/barbeiros/1/edit`, {
         method: 'PUT',
         headers: { "Content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify({

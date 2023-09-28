@@ -1,3 +1,5 @@
+import './config'
+
 document.addEventListener('DOMContentLoaded', () => {
   const new_aba = document.getElementById('new_aba')
   document.getElementsByTagName('form')[0].addEventListener('submit', evt => {
@@ -16,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     console.log(data_send);
 
-    fetch(`http://localhost:8080/${new_aba.value}/new`, {
+    fetch(`${URL_IN_USE}/${new_aba.value}/new`, {
       method: 'POST',
       headers: {
         "Content-type": "application/json; charset=UTF-8",

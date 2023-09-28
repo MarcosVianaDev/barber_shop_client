@@ -1,3 +1,7 @@
+import './config'
+import { URL_IN_USE } from './config'
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const url_params = new URLSearchParams(window.location.search)
   const item_id = url_params.get('id')
@@ -7,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //Verifica se tem id e aba do item para pesquisar no DB
   if (item_id && data_aba) {
-    fetch(`http://localhost:8080/${data_aba}/${item_id}`)
+    fetch(`${URL_IN_USE}/${data_aba}/${item_id}`)
       .then(res => res.json())
       .then((res) => {
         data_cadastro = res.data_cadastro
@@ -57,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     console.log(data_send);
-    fetch(`http://localhost:8080/${data_aba}/${item_id}/edit`, {
+    fetch(`${URL_IN_USE}/${data_aba}/${item_id}/edit`, {
       method: 'PUT',
       headers: {
         "Content-type": "application/json; charset=UTF-8",
