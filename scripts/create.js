@@ -1,4 +1,4 @@
-import './config'
+import { URL_IN_USE } from './config.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const new_aba = document.getElementById('new_aba')
