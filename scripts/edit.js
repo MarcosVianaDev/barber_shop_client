@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll(`.${data_aba}`).forEach(element => {
       element.style.display = 'inline-block'
     })
-  } else { // se não tiver ID e aba, volta para a página inicial
-    alert('Sem dados...')
-    window.location.href = window.location.origin
+  // } else { // se não tiver ID e aba, volta para a página inicial
+  //   alert('Sem dados...')
+  //   window.location.href = window.location.origin
   }
 
   form[0].onsubmit = (evt => {

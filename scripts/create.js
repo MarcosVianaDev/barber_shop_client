@@ -1,7 +1,25 @@
 import { URL_IN_USE } from './config.js'
 
+
+function disableAll() {
+  document.querySelectorAll(`input`).forEach(element => {
+    element.setAttribute('disabled', 'disabled')
+  })
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  disableAll()
+  const now = new Date().toLocaleDateString().split('/')
+  document.getElementById('data_cadastro').value = `${now[2]}-${now[1]}-${now[0]}`
+  let data_send
   const new_aba = document.getElementById('new_aba')
+  //Exibe apenas os elementos da classe do mesmo tipo de dado "new_aba"
+  new_aba.addEventListener('change', () => {
+    disableAll()
+    document.querySelectorAll(`.${new_aba.value}`).forEach(element => {
+      element.control.removeAttribute('disabled')
+    })
+  })
   document.getElementsByTagName('form')[0].addEventListener('submit', evt => {
     evt.preventDefault()
     if (new_aba.value == '') {
@@ -9,10 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
       new_aba.focus()
       return
     }
+    
     data_send = {}
     for (let index = 0; index < evt.target.length; index++) {
       const element = evt.target[index];
-      if (element.nodeName == 'INPUT') {
+      if (element.type == 'checkbox') {
+        data_send[String(element.id).replace('new_', '')] = element.checked
+        continue
+      }
+      if ((element.nodeName == 'INPUT') && (!element.disabled)) {
         data_send[String(element.id).replace('new_', '')] = element.value
       }
     }
