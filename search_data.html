@@ -1,142 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procurar</title>
+    <title>Editar</title>
     <link rel="stylesheet" href="styles/search.css">
 </head>
+
 <body>
     <div class="container">
-        <h1>Sistema de Barbearia</h1>
-        <form id="pesquisar">
+        <div class="row">
+            <h2>Pesquisar:</h2>
+        </div>
+        <form>
             <label>
-                <span>Tipo de cadastro: </span>
+                Tipo de Cadastro
                 <select id="aba">
-                    <option value="" disabled selected>Selecione</option>
-                    <option value="barbeiros">Barbeiros</option>
-                    <option value="barbearias">Barbearias</option>
-                    <option value="proprietarios">Proprietários</option>
+                    <option value="" selected disabled>Selecione</option>
+                    <option value="barbeiro">Barbeiros</option>
+                    <option value="barbearia">Barbearias</option>
+                    <option value="proprietario">Propritários</option>
                 </select>
             </label>
             <label>
-                <span>ID: </span>
-                <input type="number" id="id_input" min="1">
+                ID:
+                <input id="id" type="number" min="1" value="1">
             </label>
-            <button type="submit" id="pesquisar_btn">Pesquisar</button>
+            <button type="submit">Pesquisar</button>
+            <button type="button" id="btn_editar">Editar</button>
         </form>
-    </div>
-    <hr>
-    <div class="container">
-        <div id="output_barbeiros" class="output_form">
+        <hr>
+        <div id="result">
             <div class="row">
-                <label>
-                    <span>Nome: </span>
-                    <input type="text" id="out_nome_completo">
+                <label class="barbeiros barbearias proprietarios">
+                    <span>Data de Cadastro:</span>
+                    <input type="date" id="data_cadastro" disabled>
                 </label>
-                <label>
+                <label class="barbeiros barbearias proprietarios">
+                    <span>Ativo: </span>
+                    <input type="checkbox" id="ativo">
+                </label>
+            </div>
+            <hr>
+            <div class="row">
+                <label class="barbeiros barbearias proprietarios">
+                    <span>Nome: </span>
+                    <input type="text" id="nome" required>
+                </label>
+                <label class="barbeiros">
                     <span>Apelido: </span>
-                    <input type="text" id="out_apelido">
-                </label>
-                <label>
-                    <span>Ativo: </span>
-                    <input type="checkbox" id="out_ativo_barbeiro">
+                    <input type="text" id="apelido">
                 </label>
             </div>
+            <hr>
             <div class="row">
-                <label>
-                    <span>Data de Cadastro: </span>
-                    <input type="date" id="out_data_cadastro_barbeiro">
-                </label>
-                <label>
+                <label class="barbeiros">
                     <span>Local de Trabalho: </span>
-                    <input type="text" id="out_local_trabalho">
+                    <input type="text" id="local_trabalho">
                 </label>
-            </div>
-            <div class="row">
-                <button type="button" id="editar_btn">Editar</button>
-                <button type="button" id="cancelar_btn">Cancelar</button>
-                <button type="button" id="salvar_btn">Salvar</button>
-            </div>
-        </div>
-        <div id="output_barbearias" class="output_form">
-            <div class="row">
-                <label>
-                    <span>Nome: </span>
-                    <input type="text" id="out_nome_estabelecimento">
-                </label>
-                <label>
-                    <span>Ativo: </span>
-                    <input type="checkbox" id="out_ativo_barbearia">
-                </label>
-            </div>
-            <div class="row">
-                <label>
-                    <span>Responsável: </span>
-                    <input type="text" id="out_nome_responsável">
-                </label>
-                <label>
-                    <span>Telefone: </span>
-                    <input type="tel" id="out_telefone_barbearia">
-                </label>
-                <label>
-                    <span>Data de Cadastro: </span>
-                    <input type="date" id="out_data_cadastro_barbearia">
-                </label>
-            </div>
-            <div class="row">
-                <label>
-                    <span>E-mail: </span>
-                    <input type="email" id="out_email_responsável">
-                </label>
-                <br>
-                <label>
-                    <span>CEP: </span>
-                    <input type="text" id="out_cep_barbearia">
-                </label>
-            </div>
-            <div class="row">
-                <button type="button" id="editar_btn">Editar</button>
-                <button type="button" id="cancelar_btn">Cancelar</button>
-                <button type="button" id="salvar_btn">Salvar</button>
-            </div>
-        </div>
-        <div id="output_proprietarios" class="output_form">
-            <div class="row">
-                <label>
-                    <span>Nome: </span>
-                    <input type="text" id="out_nome_proprietario" size="30">
-                </label>
-                <label>
-                    <span>Data de Cadastro: </span>
-                    <input type="date" id="out_data_cadastro_proprietario">
-                </label>
-                <label>
-                    <span>Ativo: </span>
-                    <input type="checkbox" id="out_ativo_proprietario">
-                </label>
-            </div>
-            <div class="row">
-                <label>
-                    <span>Telefone: </span>
-                    <input type="tel" id="out_telefone_proprietario">
-                </label>
-                <label>
-                    <span>E-mail: </span>
-                    <input type="email" id="out_email_proprietario">
-                </label>
-                <label>
+                <label class="proprietarios">
                     <span>Dono de: </span>
-                    <input type="text" id="out_dono_de_proprietario">
+                    <input type="text" id="dono_de">
+                </label>
+                <label class="barbearias">
+                    <span>Responsável: </span>
+                    <input type="text" id="responsavel">
                 </label>
             </div>
+            <hr>
             <div class="row">
-                <button type="button" id="editar_btn">Editar</button>
-                <button type="button" id="cancelar_btn">Cancelar</button>
-                <button type="button" id="salvar_btn">Salvar</button>
+                <label class="barbearias proprietarios">
+                    <span>Telefone: </span>
+                    <input type="tel" id="telefone">
+                </label>
+                <label class="barbearias proprietarios">
+                    <span>e-mail: </span>
+                    <input type="email" id="email">
+                </label>
+                <label class="barbearias">
+                    <span>CEP: </span>
+                    <input type="text" id="cep">
+                </label>
             </div>
         </div>
     </div>
     <script type="module" src="scripts/search.js"></script>
 </body>
+
 </html>
