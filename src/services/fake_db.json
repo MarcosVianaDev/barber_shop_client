@@ -1,0 +1,79 @@
+{
+  "user_login": {
+    "marcos01": {
+      "user_pass": "123456"
+    },
+    "barbeiro01": {
+      "user_pass": "barb01"
+    },
+    "barbeiro02": {
+      "user_pass": "barb02"
+    },
+    "cliente01": {
+      "user_pass": "client01"
+    },
+    "cliente02": {
+      "user_pass": "client02"
+    },
+    "proprietario01": {
+      "user_pass": "propri01"
+    },
+    "proprietario02": {
+      "user_pass": "propri02"
+    },
+    "barbearia01": {
+      "user_pass": "barbes01"
+    },
+    "barbearia02": {
+      "user_pass": "barbes02"
+    }
+  },
+  "user_data": {
+    "marcos01": {
+      "nome_completo": "Marcos Viana",
+      "frase_bio": "Administrador do sistema",
+      "tipo": "administrador"
+    },
+    "barbeiro01": {
+      "nome_completo": "Barbeiro Zero Um",
+      "frase_bio": "O barbeiro numero 1 desta cidade",
+      "tipo": "barbeiro"
+    },
+    "barbeiro02": {
+      "nome_completo": "Barbeiro Zero Dois",
+      "frase_bio": "O barbeiro numero 2 desta cidade",
+      "tipo": "barbeiro"
+    },
+    "cliente01": {
+      "nome_completo": "Cliente Zero Um",
+      "frase_bio": "O Cliente numero 1 desta cidade",
+      "tipo": "cliente"
+    },
+    "cliente02": {
+      "nome_completo": "Cliente Zero Dois",
+      "frase_bio": "O Cliente numero 2 desta cidade",
+      "tipo": "cliente"
+    },
+    "proprietario01": {
+      "nome_completo": "Proprietário Zero Um",
+      "frase_bio": "O propietário numero 1 desta cidade",
+      "tipo": "proprietario"
+    },
+    "proprietario02": {
+      "nome_completo": "Proprietário Zero Dois",
+      "frase_bio": "O propietário numero 2 desta cidade",
+      "tipo": "proprietario"
+    },
+    "barbearia01": {
+      "nome_completo": "Barbearia Zero Um",
+      "frase_bio": "A barbearia numero 1 desta cidade",
+      "tipo": "barberaria"
+    },
+    "barbearia02": {
+      "nome_completo": "Barbearia Zero Dois",
+      "frase_bio": "A barbearia numero 2 desta cidade",
+      "tipo": "barberaria"
+    }
+  }
+}
+
